@@ -1,1 +1,14 @@
+public class Main {
+    public static void main(String[] args) {
+        EnvironmentalMonitoringSystem monitoringSystem = new EnvironmentalMonitoringSystem();
+        StationFactory factory = new StationFactory();
 
+        monitoringSystem.attach(factory.createStation("temperature"));
+        monitoringSystem.attach(factory.createStation("humidity"));
+        monitoringSystem.attach(factory.createStation("pollution"));
+        monitoringSystem.attach(factory.createStation("wind"));
+
+        EnvironmentalData data = new EnvironmentalData(); // Инициализация данных
+        monitoringSystem.setEnvironmentalData(data);
+    }
+}
