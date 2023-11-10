@@ -1,0 +1,5 @@
+public class WindStation implements EnvironmentalStation {
+    @Override
+    public void update(EnvironmentalData data) {
+    }
+}
