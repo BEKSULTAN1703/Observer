@@ -1,0 +1,27 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class EnvironmentalMonitoringSystem {
+    private List<EnvironmentalStation> stations = new ArrayList<>();
+    private EnvironmentalData currentData;
+
+    public void attach(EnvironmentalStation station) {
+        stations.add(station);
+    }
+
+    public void notifyAllStations() {
+        for (EnvironmentalStation station : stations) {
+            station.update(currentData);
+        }
+    }
+
+    public void setEnvironmentalData(EnvironmentalData data) {
+        this.currentData = data;
+        adjustMonitoringStrategy(data);
+        notifyAllStations();
+    }
+
+    private void adjustMonitoringStrategy(EnvironmentalData data) {
+        // Логика для адаптации стратегии мониторинга
+    }
+}
