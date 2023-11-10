@@ -1,0 +1,5 @@
+public class PollutionStation implements EnvironmentalStation {
+    @Override
+    public void update(EnvironmentalData data) {
+    }
+}
