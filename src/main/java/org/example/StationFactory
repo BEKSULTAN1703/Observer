@@ -1,0 +1,16 @@
+public class StationFactory {
+    public EnvironmentalStation createStation(String type) {
+        switch (type) {
+            case "temperature":
+                return new TemperatureStation();
+            case "humidity":
+                return new HumidityStation();
+            case "pollution":
+                return new PollutionStation();
+            case "wind":
+                return new WindStation();
+            default:
+                return null;
+        }
+    }
+}
